@@ -30,22 +30,23 @@ class SignUpActivity : AppCompatActivity() {
     private fun signIn() {
         val email = binding.edtEmail.text.toString().trim { it <= ' ' }
         val password = binding.edtPassword.text.toString().trim { it <= ' ' }
-
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    val user = auth.currentUser
-                    updateUI(user)
-                } else {
-                    // If sign in fails, display a message to the user.
-                    println("Authentication failed. ${task.exception}")
-                    Toast.makeText(
-                        baseContext, "Authentication failed. ${task.exception}",
-                        Toast.LENGTH_SHORT
-                    ).show()
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        val user = auth.currentUser
+                        updateUI(user)
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        println("Authentication failed. ${task.exception}")
+                        Toast.makeText(
+                            baseContext, "Authentication failed. ${task.exception}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
-            }
+        }
     }
 
     private fun updateUI(user: FirebaseUser?) {

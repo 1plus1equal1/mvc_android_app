@@ -1,6 +1,6 @@
 package dev.hnxtay.android_tutorial.data
 
-import dev.hnxtay.android_tutorial.Response
+import dev.hnxtay.android_tutorial.models.Response
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.features.auth.*

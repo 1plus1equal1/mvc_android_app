@@ -1,12 +1,15 @@
 package dev.hnxtay.android_tutorial.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import dev.hnxtay.android_tutorial.ui.main.recyclerview.PostAdapter
+import dev.hnxtay.android_tutorial.models.Image
 import dev.hnxtay.android_tutorial.data.Client
 import dev.hnxtay.android_tutorial.databinding.ActivityMainBinding
+import dev.hnxtay.android_tutorial.ui.DetailsActivity
+import dev.hnxtay.android_tutorial.ui.main.recyclerview.PostAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -14,7 +17,9 @@ import kotlinx.coroutines.withContext
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val postAdapter = PostAdapter()
+    private val postAdapter = PostAdapter {
+        toImageDetail(it)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,10 +37,15 @@ class MainActivity : AppCompatActivity() {
                     Client.getPostResponse()
                 }
                 postAdapter.submitList(postsResponse.results)
-                println("dataaaaa: $postsResponse")
             } catch (e: Exception) {
                 println(e)
             }
         }
+    }
+
+    private fun toImageDetail(image: Image) {
+        val intent = Intent(this, DetailsActivity::class.java)
+        intent.putExtra("image", image)
+        startActivity(intent)
     }
 }

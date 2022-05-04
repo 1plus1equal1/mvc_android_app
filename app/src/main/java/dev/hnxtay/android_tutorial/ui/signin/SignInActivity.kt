@@ -13,7 +13,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import dev.hnxtay.android_tutorial.R
 import dev.hnxtay.android_tutorial.databinding.ActivitySignInBinding
 import dev.hnxtay.android_tutorial.ui.main.MainActivity
 import dev.hnxtay.android_tutorial.ui.signup.SignUpActivity
@@ -36,7 +35,7 @@ class SignInActivity : AppCompatActivity() {
 
         val googleSignInOptions =
             GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(R.string.your_web_client_id)
+                .requestIdToken("1097209996648-89lm7o2q1em77kvncgquctvdpeg9h78k.apps.googleusercontent.com")
                 .requestEmail()
                 .build()
         val googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
@@ -59,21 +58,23 @@ class SignInActivity : AppCompatActivity() {
         val email = binding.edtEmail.text.toString().trim { it <= ' ' }
         val password = binding.edtPassword.text.toString().trim { it <= ' ' }
 
-        auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    val user = auth.currentUser
-                    updateUI(user)
-                } else {
-                    // If sign in fails, display a message to the user.
-                    println("Authentication failed. ${task.exception}")
-                    Toast.makeText(
-                        baseContext, "Authentication failed. ${task.exception}",
-                        Toast.LENGTH_SHORT
-                    ).show()
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        val user = auth.currentUser
+                        updateUI(user)
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        println("Authentication failed. ${task.exception}")
+                        Toast.makeText(
+                            baseContext, "Authentication failed. ${task.exception}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
-            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

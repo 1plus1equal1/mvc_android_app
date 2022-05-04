@@ -2,11 +2,11 @@ package dev.hnxtay.android_tutorial.ui.main.recyclerview
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import dev.hnxtay.android_tutorial.Image
+import dev.hnxtay.android_tutorial.models.Image
 
-class PostAdapter : ListAdapter<Image, PostViewHolder>(PostDiffUtil()) {
+class PostAdapter(private val listener : (Image) -> Unit) : ListAdapter<Image, PostViewHolder>(PostDiffUtil()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
-        return PostViewHolder.from(parent)
+        return PostViewHolder.from(parent, listener)
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {

@@ -23,9 +23,10 @@ class SplashActivity : AppCompatActivity() {
             if (currentUser != null) {
                 startActivity(Intent(this@SplashActivity, MainActivity::class.java))
                 finish()
+            } else {
+                startActivity(Intent(this@SplashActivity, SignInActivity::class.java))
+                finish()
             }
-            startActivity(Intent(this@SplashActivity, SignInActivity::class.java))
-            finish()
         }
     }
 }
