@@ -20,15 +20,21 @@ class DetailsActivity : AppCompatActivity() {
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        showInfoAndLogout()
+    }
+
+    private fun showInfoAndLogout() {
         val image = intent.getParcelableExtra<Image>("image")
 
         with(binding) {
             textDescription.text = image?.description
+
             Glide.with(imageView.context).load(image?.urls?.small)
                 .placeholder(R.drawable.ic_replay).into(imageView)
+
             buttonSignOut.setOnClickListener {
                 Firebase.auth.signOut()
-                startActivity(Intent(this@DetailsActivity,SignInActivity::class.java))
+                startActivity(Intent(this@DetailsActivity, SignInActivity::class.java))
                 finish()
             }
         }

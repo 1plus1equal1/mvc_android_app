@@ -12,9 +12,10 @@ import dev.hnxtay.android_tutorial.databinding.ActivitySignUpBinding
 import dev.hnxtay.android_tutorial.ui.main.MainActivity
 
 class SignUpActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySignUpBinding
 
+    private lateinit var binding: ActivitySignUpBinding
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
