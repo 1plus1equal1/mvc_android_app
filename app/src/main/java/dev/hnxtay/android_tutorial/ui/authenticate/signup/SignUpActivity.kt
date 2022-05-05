@@ -1,4 +1,4 @@
-package dev.hnxtay.android_tutorial.ui.signup
+package dev.hnxtay.android_tutorial.ui.authenticate.signup
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import dev.hnxtay.android_tutorial.databinding.ActivitySignUpBinding
-import dev.hnxtay.android_tutorial.ui.main.MainActivity
+import dev.hnxtay.android_tutorial.ui.dashboard.MainActivity
 
 class SignUpActivity : AppCompatActivity() {
 

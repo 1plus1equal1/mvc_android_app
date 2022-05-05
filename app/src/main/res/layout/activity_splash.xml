@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:adjustViewBounds="true"
+    android:contentDescription="@null"
     android:scaleType="centerCrop"
-    app:srcCompat="@drawable/splash"
-    tools:context=".ui.splash.SplashActivity">
-
-</ImageView>
+    app:srcCompat="@drawable/img_splash"
+    tools:context=".ui.splash.SplashActivity" />

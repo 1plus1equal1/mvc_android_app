@@ -1,4 +1,4 @@
-package dev.hnxtay.android_tutorial.ui.main
+package dev.hnxtay.android_tutorial.ui.dashboard
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dev.hnxtay.android_tutorial.models.Image
 import dev.hnxtay.android_tutorial.data.Client
 import dev.hnxtay.android_tutorial.databinding.ActivityMainBinding
-import dev.hnxtay.android_tutorial.ui.DetailsActivity
-import dev.hnxtay.android_tutorial.ui.main.recyclerview.PostAdapter
+import dev.hnxtay.android_tutorial.ui.dashboard.recyclerview.PostAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

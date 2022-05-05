@@ -1,4 +1,4 @@
-package dev.hnxtay.android_tutorial.ui
+package dev.hnxtay.android_tutorial.ui.dashboard
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import com.google.firebase.ktx.Firebase
 import dev.hnxtay.android_tutorial.R
 import dev.hnxtay.android_tutorial.databinding.ActivityDetailsBinding
 import dev.hnxtay.android_tutorial.models.Image
-import dev.hnxtay.android_tutorial.ui.signin.SignInActivity
+import dev.hnxtay.android_tutorial.ui.authenticate.AuthenticationActivity
 
 class DetailsActivity : AppCompatActivity() {
 
@@ -34,7 +34,7 @@ class DetailsActivity : AppCompatActivity() {
 
             buttonSignOut.setOnClickListener {
                 Firebase.auth.signOut()
-                startActivity(Intent(this@DetailsActivity, SignInActivity::class.java))
+                startActivity(Intent(this@DetailsActivity, AuthenticationActivity::class.java))
                 finish()
             }
         }

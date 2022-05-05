@@ -1,4 +1,4 @@
-package dev.hnxtay.android_tutorial.ui.main.recyclerview
+package dev.hnxtay.android_tutorial.ui.dashboard.recyclerview
 
 import androidx.recyclerview.widget.DiffUtil
 import dev.hnxtay.android_tutorial.models.Image

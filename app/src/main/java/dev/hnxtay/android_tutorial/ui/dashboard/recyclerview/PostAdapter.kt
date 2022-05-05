@@ -1,4 +1,4 @@
-package dev.hnxtay.android_tutorial.ui.main.recyclerview
+package dev.hnxtay.android_tutorial.ui.dashboard.recyclerview
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
