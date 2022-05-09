@@ -1,6 +1,6 @@
 package dev.hnxtay.android_tutorial.data
 
-import dev.hnxtay.android_tutorial.models.Response
+import dev.hnxtay.android_tutorial.model.Response
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.features.auth.*
@@ -30,8 +30,7 @@ object Client {
             logger = Logger.ANDROID
             level = LogLevel.ALL
         }
-        install(Auth) {
-        }
+        install(Auth)
     }
 
     suspend fun getPostResponse(): Response {

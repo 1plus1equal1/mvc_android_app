@@ -18,7 +18,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import dev.hnxtay.android_tutorial.R
 import dev.hnxtay.android_tutorial.databinding.FragmentSignUpBinding
-import dev.hnxtay.android_tutorial.ui.dashboard.MainActivity
+import dev.hnxtay.android_tutorial.ui.dashboard.post.PostActivity
 
 /**
  * @author huypham on 5/6/2022
@@ -107,7 +107,7 @@ class SignUpFragment: DialogFragment() {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             println("current user: $user")
-            val intent = Intent(activity, MainActivity::class.java)
+            val intent = Intent(activity, PostActivity::class.java)
             startActivity(intent)
             activity?.finish()
         }

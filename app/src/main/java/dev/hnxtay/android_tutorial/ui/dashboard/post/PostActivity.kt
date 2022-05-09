@@ -7,26 +7,25 @@ import androidx.lifecycle.lifecycleScope
 import dev.hnxtay.android_tutorial.model.Image
 import dev.hnxtay.android_tutorial.data.Client
 import dev.hnxtay.android_tutorial.databinding.ActivityMainBinding
+import dev.hnxtay.android_tutorial.databinding.ActivityPostBinding
 import dev.hnxtay.android_tutorial.ui.dashboard.DetailsActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainActivity : AppCompatActivity() {
+class PostActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private val postAdapter = PostAdapter {
-        toImageDetail(it)
-    }
+    private lateinit var binding: ActivityPostBinding
+    private lateinit var postAdapter: PostAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityPostBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         with(binding.recyclerView) {
             adapter = postAdapter
-            layoutManager = LinearLayoutManager(this@MainActivity)
+            layoutManager = LinearLayoutManager(this@PostActivity)
             setHasFixedSize(true)
         }
         lifecycleScope.launch {
@@ -41,7 +40,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
+    private fun initAdapter() {
+        postAdapter = PostAdapter {
+            toImageDetail(it)
+        }
+    }
 
     private fun toImageDetail(image: Image) {
         val intent = Intent(this, DetailsActivity::class.java)

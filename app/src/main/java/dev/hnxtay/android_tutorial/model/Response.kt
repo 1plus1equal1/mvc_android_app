@@ -1,4 +1,4 @@
-package dev.hnxtay.android_tutorial.models
+package dev.hnxtay.android_tutorial.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -12,23 +12,4 @@ data class Response(
     @SerialName("total_pages")
     val totalPages: Int,
     val results: List<Image>
-) : Parcelable
-
-@Parcelize
-@Serializable
-data class Image(
-    val id: String,
-    val description: String?,
-    val urls: Url,
-    val likes: Int,
-    
-) : Parcelable
-
-@Parcelize
-@Serializable
-data class Url(
-    val raw: String?,
-    val full: String?,
-    val regular: String?,
-    val small: String?,
 ) : Parcelable

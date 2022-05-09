@@ -11,11 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_tutorial">
+
         <activity
             android:name=".ui.dashboard.DetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name="dev.hnxtay.android_tutorial.ui.authenticate.signup.SignUpActivity"
             android:exported="false" />
 
         <activity
@@ -35,7 +33,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.dashboard.MainActivity"
+            android:name=".ui.dashboard.post.PostActivity"
             android:exported="true" />
     </application>
 

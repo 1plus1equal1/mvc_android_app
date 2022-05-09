@@ -1,4 +1,4 @@
-package dev.hnxtay.android_tutorial.ui.dashboard.recyclerview
+package dev.hnxtay.android_tutorial.ui.dashboard.post
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

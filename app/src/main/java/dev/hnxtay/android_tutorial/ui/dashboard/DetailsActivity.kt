@@ -8,7 +8,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import dev.hnxtay.android_tutorial.R
 import dev.hnxtay.android_tutorial.databinding.ActivityDetailsBinding
-import dev.hnxtay.android_tutorial.models.Image
+import dev.hnxtay.android_tutorial.model.Image
 import dev.hnxtay.android_tutorial.ui.authenticate.AuthenticationActivity
 
 class DetailsActivity : AppCompatActivity() {

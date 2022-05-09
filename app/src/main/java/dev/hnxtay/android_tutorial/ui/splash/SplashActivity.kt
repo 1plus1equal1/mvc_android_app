@@ -8,7 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
 import dev.hnxtay.android_tutorial.R
 import dev.hnxtay.android_tutorial.ui.authenticate.AuthenticationActivity
-import dev.hnxtay.android_tutorial.ui.dashboard.MainActivity
+import dev.hnxtay.android_tutorial.ui.dashboard.post.PostActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -31,7 +31,7 @@ class SplashActivity : AppCompatActivity() {
         lifecycleScope.launch {
             delay(DELAY_TIME)
             if (currentUser != null) {
-                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                startActivity(Intent(this@SplashActivity, PostActivity::class.java))
             } else {
                 startActivity(Intent(this@SplashActivity, AuthenticationActivity::class.java))
             }
