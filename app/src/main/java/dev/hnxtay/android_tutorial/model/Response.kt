@@ -19,7 +19,9 @@ data class Response(
 data class Image(
     val id: String,
     val description: String?,
-    val urls: Url
+    val urls: Url,
+    val likes: Int,
+    
 ) : Parcelable
 
 @Parcelize

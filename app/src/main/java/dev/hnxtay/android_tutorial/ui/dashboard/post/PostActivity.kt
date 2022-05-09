@@ -1,14 +1,13 @@
-package dev.hnxtay.android_tutorial.ui.dashboard
+package dev.hnxtay.android_tutorial.ui.dashboard.post
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
-import dev.hnxtay.android_tutorial.models.Image
+import dev.hnxtay.android_tutorial.model.Image
 import dev.hnxtay.android_tutorial.data.Client
 import dev.hnxtay.android_tutorial.databinding.ActivityMainBinding
-import dev.hnxtay.android_tutorial.ui.dashboard.recyclerview.PostAdapter
+import dev.hnxtay.android_tutorial.ui.dashboard.DetailsActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -41,6 +40,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
 
     private fun toImageDetail(image: Image) {
         val intent = Intent(this, DetailsActivity::class.java)

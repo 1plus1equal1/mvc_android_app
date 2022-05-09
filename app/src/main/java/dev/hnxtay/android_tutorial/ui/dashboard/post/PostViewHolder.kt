@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import dev.hnxtay.android_tutorial.R
 import dev.hnxtay.android_tutorial.databinding.ItemRecyclerviewBinding
-import dev.hnxtay.android_tutorial.models.Image
+import dev.hnxtay.android_tutorial.model.Image
 
 class PostViewHolder private constructor(
     private val binding: ItemRecyclerviewBinding,
