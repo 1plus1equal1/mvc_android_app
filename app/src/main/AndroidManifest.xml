@@ -11,27 +11,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_tutorial">
+
         <activity
-            android:name=".ui.DetailsActivity"
+            android:name=".ui.dashboard.DetailsActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.signup.SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.signin.SignInActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ui.splash.SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.authenticate.AuthenticationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.dashboard.post.PostActivity"
             android:exported="true" />
+
     </application>
 
 </manifest>

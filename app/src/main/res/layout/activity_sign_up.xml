@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/image_login"
-    tools:context=".ui.signup.SignUpActivity">
+    >
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_sign_up"
@@ -14,7 +13,6 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="64dp"
-        android:background="@drawable/button_bgr"
         android:text="Sign Up"
         android:textColor="#FFFFFF"
         android:textSize="16sp"

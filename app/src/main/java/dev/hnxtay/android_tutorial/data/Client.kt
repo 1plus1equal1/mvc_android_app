@@ -1,6 +1,6 @@
 package dev.hnxtay.android_tutorial.data
 
-import dev.hnxtay.android_tutorial.models.Response
+import dev.hnxtay.android_tutorial.model.Response
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.features.auth.*
@@ -11,6 +11,7 @@ import io.ktor.client.request.*
 
 object Client {
     private const val POSTS_URL = "https://api.unsplash.com/search/photos?query=vietnamese-girl"
+
     private val httpClient = HttpClient(Android) {
         engine {
             connectTimeout = 100_000
@@ -30,8 +31,7 @@ object Client {
             logger = Logger.ANDROID
             level = LogLevel.ALL
         }
-        install(Auth) {
-        }
+        install(Auth)
     }
 
     suspend fun getPostResponse(): Response {

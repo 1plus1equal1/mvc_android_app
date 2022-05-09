@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">android_tutorial</string>
-    <string name="dont_have_account">Dont have an account? <b>Sign Up</b></string>
+
+    <!--Authentication-->
+    <string name="label_edit_text_email">Email</string>
+    <string name="label_edit_text_password">Password</string>
+    <string name="label_text_view_sign_in_with">Sign in with</string>
+    <string name="label_button_sign_in">Sign in</string>
+    <string name="label_button_sign_up">Sign up</string>
+    <string name="label_text_view_sign_up">Sign up</string>
+    
+    <!--Dashboard-->
+    <string name="label_text_view_greeting">Welcome</string>
+    <string name="label_text_view_description">This is the tutorial app</string>
+
+    <!--Detail-->
+    <string name="label_text_view_no_data">No data</string>
+
 </resources>
