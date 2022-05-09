@@ -11,8 +11,8 @@ import dev.hnxtay.android_tutorial.model.Image
 class PostViewHolder private constructor(
     private val binding: ItemRecyclerviewBinding,
     private val listener: (Image) -> Unit
-) :
-    RecyclerView.ViewHolder(binding.root) {
+) : RecyclerView.ViewHolder(binding.root) {
+
     companion object {
         fun from(parent: ViewGroup, listener: (Image) -> Unit): PostViewHolder {
             val binding =
@@ -23,10 +23,13 @@ class PostViewHolder private constructor(
 
     fun bind(post: Image) {
         with(binding) {
-            textCaption.text = post.description
-            Glide.with(image.context).load(post.urls.small)
-                .placeholder(R.drawable.ic_replay).into(image)
-            binding.image.setOnClickListener {
+//            textCaption.text = post.description
+            Glide.with(imgPostImage.context)
+                .load(post.urls.small)
+                .placeholder(R.drawable.ic_replay)
+                .into(imgPostImage)
+
+            imgPostImage.setOnClickListener {
                 listener(post)
             }
         }
