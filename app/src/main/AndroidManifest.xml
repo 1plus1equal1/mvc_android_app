@@ -35,6 +35,7 @@
         <activity
             android:name=".ui.dashboard.post.PostActivity"
             android:exported="true" />
+
     </application>
 
 </manifest>

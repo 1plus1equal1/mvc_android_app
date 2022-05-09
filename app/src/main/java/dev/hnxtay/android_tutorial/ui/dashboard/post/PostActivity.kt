@@ -4,7 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import dev.hnxtay.android_tutorial.data.Client
 import dev.hnxtay.android_tutorial.databinding.ActivityPostBinding
 import dev.hnxtay.android_tutorial.model.Image
@@ -22,12 +23,23 @@ class PostActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPostBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initAdapter()
+        initRecyclerView()
+    }
 
+    private fun initAdapter() {
+        postAdapter = PostAdapter {
+            openDetail(it)
+        }
+    }
+
+    private fun initRecyclerView() {
         with(binding.rvPost) {
             adapter = postAdapter
-            layoutManager = LinearLayoutManager(this@PostActivity)
+            layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
             setHasFixedSize(true)
         }
+
         lifecycleScope.launch {
             try {
                 val postsResponse = withContext(Dispatchers.IO) {
@@ -40,13 +52,7 @@ class PostActivity : AppCompatActivity() {
         }
     }
 
-    private fun initAdapter() {
-        postAdapter = PostAdapter {
-            toImageDetail(it)
-        }
-    }
-
-    private fun toImageDetail(image: Image) {
+    private fun openDetail(image: Image) {
         val intent = Intent(this, DetailsActivity::class.java)
         intent.putExtra("image", image)
         startActivity(intent)
