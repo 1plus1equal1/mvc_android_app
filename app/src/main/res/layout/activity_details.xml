@@ -7,35 +7,128 @@
     tools:context=".ui.dashboard.DetailsActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgDetail"
         android:layout_width="0dp"
-        android:layout_height="250dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/guideLineImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/splash" />
+        tools:srcCompat="@drawable/splash" />
 
-    <TextView
-        android:id="@+id/text_description"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
-    <Button
-        android:id="@+id/button_sign_out"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineImage"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Sign Out"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <ImageView
+        android:id="@+id/imgBackgroundDetail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:src="@drawable/bg_sign_up"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@id/guideLine" />
+
+    <TextView
+        android:id="@+id/tvLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_30dp"
+        android:background="@drawable/bg_button_white"
+        android:drawablePadding="@dimen/size_6dp"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/size_20dp"
+        android:paddingVertical="@dimen/size_10dp"
+        android:textSize="@dimen/size_16sp"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_like"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:text="12345" />
+
+    <TextView
+        android:id="@+id/tvInstagramDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_10dp"
+        android:layout_marginTop="@dimen/size_50dp"
+        android:drawablePadding="@dimen/size_6dp"
+        android:textSize="@dimen/size_16sp"
+        app:drawableStartCompat="@drawable/ic_instagram"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLike"
+        tools:text="instagram" />
+
+    <TextView
+        android:id="@+id/tvTwitterDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_10dp"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:drawablePadding="@dimen/size_6dp"
+        android:textSize="@dimen/size_16sp"
+        app:drawableStartCompat="@drawable/ic_twitter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInstagramDetail"
+        tools:text="twitter" />
+
+    <TextView
+        android:id="@+id/tvUrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_10dp"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:drawablePadding="@dimen/size_6dp"
+        android:textSize="@dimen/size_16sp"
+        app:drawableStartCompat="@drawable/ic_link"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTwitterDetail"
+        tools:text="link" />
+
+    <TextView
+        android:id="@+id/tvBio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_10dp"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:drawablePadding="@dimen/size_6dp"
+        android:textSize="@dimen/size_16sp"
+        app:drawableStartCompat="@drawable/ic_bio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUrl"
+        tools:text="bio" />
+
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:layout_marginTop="@dimen/size_10dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

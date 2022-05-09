@@ -13,4 +13,7 @@
     <string name="label_text_view_greeting">Welcome</string>
     <string name="label_text_view_description">This is the tutorial app</string>
 
+    <!--Detail-->
+    <string name="label_text_view_no_data">No data</string>
+
 </resources>

@@ -11,6 +11,7 @@ import io.ktor.client.request.*
 
 object Client {
     private const val POSTS_URL = "https://api.unsplash.com/search/photos?query=vietnamese-girl"
+
     private val httpClient = HttpClient(Android) {
         engine {
             connectTimeout = 100_000

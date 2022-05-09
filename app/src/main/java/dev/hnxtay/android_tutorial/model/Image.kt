@@ -14,4 +14,5 @@ data class Image(
     val description: String?,
     val urls: UrlResponse,
     val likes: Int,
+    val user: User
 ) : Parcelable

@@ -32,6 +32,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvGreeting" />
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgSignOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/size_20dp"
@@ -45,7 +46,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/size_64dp"
-        android:background="@drawable/bg_sign_up"
+        android:background="@drawable/bg_post"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,12 +56,12 @@
         android:id="@+id/rvPost"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/size_30dp"
+        android:paddingTop="@dimen/size_4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/imgBackground"
         tools:itemCount="3"
-        tools:listitem="@layout/item_recyclerview"/>
+        tools:listitem="@layout/item_recyclerview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
